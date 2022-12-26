@@ -6,7 +6,8 @@ module.exports = {
     title: `Coffee House`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-theme-ui", "gatsby-plugin-mdx", {
+  plugins: [
+  {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "pages",
