@@ -1,6 +1,5 @@
 import * as React from "react"
-import { useEffect } from "react"
-import { container, text, button } from "../theme"
+import { container, text, button, anchor, input } from "../theme"
 
 export const Title = (props) => {
   return (
@@ -39,14 +38,52 @@ export const Button = (props) => {
 
   return (
   <button
-    style={{...text('small'), ...button(props.type || 'regular', hover), ...props.style}}
+    style={{...text('small'), ...button(props.type || 'default', hover, props.color || 'primary'), ...props.style}}
+    onMouseEnter={() => setHover(true)}
+    onMouseLeave={() => setHover(false)}
+    onFocus={() => setHover(true)}
+    onBlur={() => setHover(false)}
+    onClick={props.onClick}
+    tabIndex={props.tabIndex}
+  >
+    {props.children}
+  </button>
+  )
+}
+
+export const Input = (props) => {
+  const [hover, setHover] = React.useState(false)
+
+  return (
+  <input
+    type={props.inputType || 'text'}
+    style={{...text('small'), ...input(props.type || 'default', hover, props.color || 'primary'), ...props.style}}
+    placeholder={props.placeholder || ''}
+    onMouseEnter={() => setHover(true)}
+    onMouseLeave={() => setHover(false)}
+    onFocus={() => setHover(true)}
+    onBlur={() => setHover(false)}
+    onChange={props.onChange}
+  />
+  )
+}
+
+export const Anchor = (props) => {
+  const [hover, setHover] = React.useState(false)
+
+  return (
+  <a 
+    href={props.href || '#'}
+    style={{...anchor(props.type || 'default', hover, props.color), ...props.style}}
+    target={props.target || '_self'}
+    rel={props.rel || 'noopener noreferrer'}
     onMouseEnter={() => setHover(true)}
     onMouseLeave={() => setHover(false)}
     onFocus={() => setHover(true)}
     onBlur={() => setHover(false)}
   >
     {props.children}
-  </button>
+  </a>
   )
 }
 
@@ -83,6 +120,7 @@ export const DynamicBackground = (props) => {
     alignItems: 'center',
     width: '100%',
     height: props.full ? '100vh' : 'fit-content',
+    border: 'none',
   }
   
   let handleMouse = (e) => {
@@ -96,11 +134,12 @@ export const DynamicBackground = (props) => {
     }
     , 10)
     return () => clearInterval(timer)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [target])
 
   return (
-  <div style={{...background_style, ...imageStyle, ...props.style}} onMouseMove={handleMouse}>
+  <button style={{...background_style, ...imageStyle, ...props.style}} onMouseMove={handleMouse}>
     {props.children}
-  </div>
+  </button>
   )
 }
