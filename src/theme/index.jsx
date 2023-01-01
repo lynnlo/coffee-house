@@ -10,6 +10,7 @@ export const theme = {
 
   // Typography
   fontFamily: 'Montserrat, sans-serif',
+  fontSize: '1.4rem',
 }
 
 export default theme
@@ -63,15 +64,15 @@ export const text = (size = 'small') => {
 
   switch (size) {
     case 'small':
-      new_text.fontSize = '1.4rem'
+      new_text.fontSize = `min(1.4rem, 1rem + 1.4vw)`
       break
     case 'medium':
-      new_text.fontSize = '3.6rem'
+      new_text.fontSize = `min(3.6rem, 1rem + 3.6vw)`
       new_text.fontFamily = 'Cormorant, serif'
       new_text.paddingLeft = '16px'
       break
     case 'large':
-      new_text.fontSize = '6.0rem'
+      new_text.fontSize = `min(6.0rem, 1rem + 6vw)`
       new_text.fontFamily = 'Cormorant, serif'
       new_text.fontWeight = 'bold'
       break
@@ -90,9 +91,7 @@ export const button = (type = 'default', hover = false, color = 'primary') => {
     fontFamily: theme.fontFamily,
 
     margin: '8px',
-    padding: '24px',
-    paddingLeft: '48px',
-    paddingRight: '48px',
+    padding: 'min(24px, 4vw)',
     borderRadius: '25px',
     border: 'none',
 
@@ -159,8 +158,6 @@ export const input = (type = 'default', hover = false, color = 'primary') => {
 
     margin: '8px',
     padding: '24px',
-    paddingLeft: '48px',
-    paddingRight: '48px',
     borderRadius: '25px',
     border: 'none',
 

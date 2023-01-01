@@ -109,12 +109,12 @@ export const DynamicBackground = (props) => {
   let [target, setTarget] = React.useState({x: 0, y: 0})
 
   let [imageStyle, setImageStyle] = React.useState({
-    background: `linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url(${props.src})` || 'transparent',
     backgroundPosition: `0% 25%`,
   })
 
   let background_style = {
     display: 'flex',
+    background: `linear-gradient(${props.intractable ? '90deg' : '0deg'}, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url(${props.src})` || 'transparent',
     backgroundSize: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
@@ -137,9 +137,17 @@ export const DynamicBackground = (props) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [target])
 
+  React.useEffect(() => {
+    if (props.intractable) {
+      window.addEventListener('mousemove', handleMouse)
+      return () => window.removeEventListener('mousemove', handleMouse)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
-  <button style={{...background_style, ...imageStyle, ...props.style}} onMouseMove={handleMouse}>
+  <div style={{...background_style, ...(props.intractable ? imageStyle : []), ...props.style}}>
     {props.children}
-  </button>
+  </div>
   )
 }
