@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "dev": "gatsby develop",
+    "host": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -17,7 +17,7 @@
   "dependencies": {
     "gatsby": "^5.3.3",
     "gatsby-plugin-image": "^3.3.2",
-    "gatsby-plugin-layout": "^4.4.0",
+    "gatsby-plugin-layout": "^4.3.0",
     "gatsby-plugin-manifest": "^5.3.1",
     "gatsby-plugin-sharp": "^5.3.2",
     "gatsby-source-filesystem": "^5.3.1",

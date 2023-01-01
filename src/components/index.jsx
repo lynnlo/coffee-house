@@ -110,6 +110,7 @@ export const DynamicBackground = (props) => {
 
   let [imageStyle, setImageStyle] = React.useState({
     backgroundPosition: `0% 25%`,
+    backgroundSize: 'fill',
   })
 
   let background_style = {
