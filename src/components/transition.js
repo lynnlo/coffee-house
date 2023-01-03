@@ -4,27 +4,30 @@ import {
   Transition as ReactTransition,
 } from "react-transition-group"
 
+import { container } from "../theme"
+
 const timeout = 250
 const getTransitionStyles = {
   entering: {
-    position: `absolute`,
+    position: 'absolute',
     opacity: 0,
+    filter: 'blur(12px)',
   },
   entered: {
-    transition: `opacity ${timeout}ms ease-in-out`,
+    transition: `opacity ${timeout}ms ease-in-out, filter ${timeout}ms ease-in-out`,
     opacity: 1,
+    filter: 'blur(0px)',
   },
   exiting: {
-    transition: `opacity ${timeout}ms ease-in-out`,
+    transition: `opacity ${timeout}ms ease-in-out, filter ${timeout}ms ease-in-out`,
     opacity: 0,
+    filter: 'blur(12px)',
   },
 }
 
 const Transition = ({ children, location }) => {
-  const { children, location } = this.props
-
   return (
-    <TransitionGroup>
+    <TransitionGroup style={container('full')}> 
       <ReactTransition
         key={location.pathname}
         timeout={{
