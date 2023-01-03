@@ -4,12 +4,13 @@ import { container } from "../theme"
 import { Title, Subtitle, Button, DynamicBackground } from "../components"
 
 import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const IndexPage = ({ breakpoint }) => {
   return (
     <div style={container('full')}>
       {breakpoint === 'large' && (
-        <DynamicBackground full intractable src='https://images.pexels.com/photos/773958/pexels-photo-773958.jpeg' alt='Background of coffee beans'>
+        <DynamicBackground full intractable image={<StaticImage src="../images/coffee-backdrop.jpg" alt="Background of coffee beans" />}>
           <div style={{...container('medium'), alignItems: 'start'}}>
             <Title>Greco Company</Title>
             <Subtitle>Specialty Coffee Roasters</Subtitle>
@@ -22,7 +23,7 @@ const IndexPage = ({ breakpoint }) => {
         </DynamicBackground>
       )}
       {breakpoint !== 'large' && (
-        <DynamicBackground full style={{flexDirection: 'column'}} src='https://images.pexels.com/photos/773958/pexels-photo-773958.jpeg' alt='Background of coffee beans'>
+        <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-backdrop.jpg" alt="Background of coffee beans" />}>
           <Title>Greco Company</Title>
           <Subtitle>Specialty Coffee Roasters</Subtitle>
           <Link to='/About' style={{textDecoration: 'none'}}>

@@ -34,7 +34,7 @@ const About = ({ breakpoint }) => {
 
       {breakpoint === 'medium' && (
         <div style={container('full')}>
-          <DynamicBackground full style={{flexDirection: 'column', gap: '1em'}} src='https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg' alt='A cup of cappuccino'>
+          <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-cup.jpg" alt="A cup of cappuccino" />}>
             <Title>About Us</Title>
             <hr style={{width: '25%'}} />
             <div style={{...container('medium'), width: '65vw', gap: '1em'}}>
@@ -55,7 +55,7 @@ const About = ({ breakpoint }) => {
 
       {breakpoint === 'small' && (
         <div style={container('full')}>
-          <DynamicBackground full style={{flexDirection: 'column', gap: '1em'}} src='https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg' alt='A cup of cappuccino'>
+        <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-cup.jpg" alt="A cup of cappuccino" />}>
             <Title>About Us</Title>
             <div style={{...container('medium'), width: '75vw'}}>
               <Text>

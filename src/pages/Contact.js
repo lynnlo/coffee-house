@@ -45,7 +45,7 @@ const About = ({ breakpoint }) => {
       
       {breakpoint === 'medium' && (
         <div style={container('full')}>
-          <DynamicBackground full style={{flexDirection: 'column'}} src='https://images.pexels.com/photos/2307221/pexels-photo-2307221.jpeg' alt='Outdoor entrance of a cafe'>
+        <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-front.jpg" alt="Outdoor entrance of a cafe" />}>
             <Title>Contact Us</Title>
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'start', gap: '1em'}}>
               <Text>
@@ -78,7 +78,7 @@ const About = ({ breakpoint }) => {
 
       {breakpoint === 'small' && (
         <div style={container('full')}>
-          <DynamicBackground full style={{flexDirection: 'column'}} src='https://images.pexels.com/photos/2307221/pexels-photo-2307221.jpeg' alt='Outdoor entrance of a cafe'>
+          <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-front.jpg" alt="Outdoor entrance of a cafe" />}>
             <Title>Contact Us</Title>
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'start', gap: '1em'}}>
               <Text>

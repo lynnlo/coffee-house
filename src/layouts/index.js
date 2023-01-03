@@ -28,9 +28,29 @@ const TemplateWrapper = ({ children, location }) => {
 	return (
     <main style={theme}>
       <div style={container('full')}>
-        {breakpoint !== 'small' && (
+        {breakpoint === 'large' && (
           <Header>
-            <StaticImage src='../images/title.png' alt='Greco Company logo' width={300}/>
+            <Link to='/' style={{textDecoration: 'none'}}>
+              <StaticImage src='../images/title.png' alt='Greco Company logo and title' style={{width: '15vw'}}/>
+            </Link>
+            <div style={{...container('medium'), flexDirection: 'row', paddingTop: '1em', gap: '1em'}}>
+              <Link to='/' style={{textDecoration: 'none'}}>
+                <Button type='plain' tabIndex="-1">Home<hr /></Button>
+              </Link>
+              <Link to='/About' style={{textDecoration: 'none'}}>
+                <Button type='plain' tabIndex="-1">About<hr /></Button>
+              </Link>
+              <Link to='/Contact' style={{textDecoration: 'none'}}>
+                <Button type='plain' tabIndex="-1">Contact<hr /></Button>
+              </Link>
+            </div>
+          </Header>
+        )}
+        {breakpoint === 'medium' && (
+          <Header>
+            <Link to='/' style={{textDecoration: 'none'}}>
+              <StaticImage src='../images/gatsby-icon.png' alt='Greco Company logo' style={{width: '10vw'}}/>
+            </Link>
             <div style={{...container('medium'), flexDirection: 'row', paddingTop: '1em', gap: '1em'}}>
               <Link to='/' style={{textDecoration: 'none'}}>
                 <Button type='plain' tabIndex="-1">Home<hr /></Button>

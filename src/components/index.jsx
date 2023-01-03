@@ -109,13 +109,16 @@ export const DynamicBackground = (props) => {
   let [target, setTarget] = React.useState({x: 0, y: 0})
 
   let [imageStyle, setImageStyle] = React.useState({
-    backgroundPosition: `0% 25%`,
-    backgroundSize: 'fill',
+    zIndex: -1,
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
   })
 
   let background_style = {
+    zIndex: 1,
     display: 'flex',
-    background: `linear-gradient(${props.intractable ? '90deg' : '0deg'}, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url(${props.src})` || 'transparent',
+    background: `linear-gradient(${props.intractable ? '90deg' : '0deg'}, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2))`,
     backgroundSize: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
@@ -131,7 +134,7 @@ export const DynamicBackground = (props) => {
   React.useEffect(() => {
     let timer = setInterval(() => {
       setPosition({x: position.x + (target.x - position.x) / 10, y: position.y + (target.y - position.y) / 10})
-      setImageStyle({...imageStyle, backgroundPosition: `${position.x * 10}% ${(position.y * 10) + 25}%`})
+      setImageStyle({...imageStyle, transform: `translate(${(position.x * 1) - .5}%, ${(position.y * 1) - .5}%)`})
     }
     , 10)
     return () => clearInterval(timer)
@@ -147,8 +150,11 @@ export const DynamicBackground = (props) => {
   }, [])
 
   return (
-  <div style={{...background_style, ...(props.intractable ? imageStyle : []), ...props.style}}>
-    {props.children}
-  </div>
+  <>
+    {React.cloneElement(props.image, {style: imageStyle})}
+    <div style={{...background_style, ...props.style}}>
+      {props.children}
+    </div>
+  </>
   )
 }
