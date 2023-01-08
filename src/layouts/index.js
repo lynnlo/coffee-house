@@ -7,14 +7,15 @@ import Transition from "../components/transition"
 import './index.css'
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { Helmet } from "react-helmet"
 
 const TemplateWrapper = ({ children, location }) => {
   let [breakpoint, setBreakpoint] = React.useState('medium')
   React.useEffect(() => {
     let handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 768 || window.innerHeight < 768) {
         setBreakpoint('small')
-      } else if (window.innerWidth < 1024) {
+      } else if (window.innerWidth < 1024 || window.innerHeight < 1024) {
         setBreakpoint('medium')
       } else {
         setBreakpoint('large')
@@ -27,11 +28,14 @@ const TemplateWrapper = ({ children, location }) => {
 
 	return (
     <main style={theme}>
+      <Helmet htmlAttributes={{lang: 'en'}}>
+        <meta name="description" content=" Greco Co. is a family-owned coffee specialty roaster based in Phoenix, Arizona." />
+      </Helmet>
       <div style={container('full')}>
         {breakpoint === 'large' && (
           <Header>
             <Link to='/' style={{textDecoration: 'none'}}>
-              <StaticImage src='../images/title.png' alt='Greco Company logo and title' style={{width: '15vw'}}/>
+              <StaticImage src='../images/coffee-title.png' alt='Greco Company logo and title' style={{width: '12vw'}}/>
             </Link>
             <div style={{...container('medium'), flexDirection: 'row', paddingTop: '1em', gap: '1em'}}>
               <Link to='/' style={{textDecoration: 'none'}}>
@@ -49,7 +53,7 @@ const TemplateWrapper = ({ children, location }) => {
         {breakpoint === 'medium' && (
           <Header>
             <Link to='/' style={{textDecoration: 'none'}}>
-              <StaticImage src='../images/gatsby-icon.png' alt='Greco Company logo' style={{width: '10vw'}}/>
+              <StaticImage src='../images/gatsby-icon.png' alt='Greco Company logo' style={{width: '8vw'}}/>
             </Link>
             <div style={{...container('medium'), flexDirection: 'row', paddingTop: '1em', gap: '1em'}}>
               <Link to='/' style={{textDecoration: 'none'}}>

@@ -118,7 +118,7 @@ export const DynamicBackground = (props) => {
   let background_style = {
     zIndex: 1,
     display: 'flex',
-    background: `linear-gradient(${props.intractable ? '90deg' : '0deg'}, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2))`,
+    background: `linear-gradient(${props.intractable ? '90deg' : '0deg'}, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3))`,
     backgroundSize: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
