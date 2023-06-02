@@ -115,28 +115,31 @@ export const DynamicBackground = (props) => {
     height: '100%',
   })
 
-  let background_style = {
+  let [backgroundStyle, setBackgroundStyle] = React.useState({
     zIndex: 1,
     display: 'flex',
-    background: `linear-gradient(${props.intractable ? '90deg' : '0deg'}, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3))`,
+    background: `linear-gradient(${props.intractable ? '90deg' : '0deg'}, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5))`,
     backgroundSize: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
     height: props.full ? '100vh' : 'fit-content',
     border: 'none',
-  }
+    overflow: 'hidden',
+  })
   
   let handleMouse = (e) => {
     setTarget({x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight})
   }
 
   React.useEffect(() => {
+    if (!props.intractable) return
     let timer = setInterval(() => {
-      setPosition({x: position.x + (target.x - position.x) / 10, y: position.y + (target.y - position.y) / 10})
+      setPosition({x: position.x + (target.x - position.x) / 8, y: position.y + (target.y - position.y) / 8})
       setImageStyle({...imageStyle, transform: `translate(${(position.x * 1) - .5}%, ${(position.y * 1) - .5}%)`})
+      setBackgroundStyle({...backgroundStyle, transform: `translate(${(position.x * 0.8) - .5}%, ${(position.y * 0.8) - .5}%)`})
     }
-    , 10)
+    , 5)
     return () => clearInterval(timer)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [target])
@@ -152,7 +155,7 @@ export const DynamicBackground = (props) => {
   return (
   <>
     {React.cloneElement(props.image, {style: imageStyle})}
-    <div style={{...background_style, ...props.style}}>
+    <div style={{...backgroundStyle, ...props.style}}>
       {props.children}
     </div>
   </>

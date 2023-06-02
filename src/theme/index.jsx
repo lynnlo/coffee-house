@@ -9,8 +9,8 @@ export const theme = {
   background: color_background,
 
   // Typography
-  fontFamily: 'Montserrat, sans-serif',
-  fontSize: '1.4rem',
+  fontFamily: 'Cormorant, serif',
+  fontSize: '1.6rem',
 }
 
 export default theme
@@ -67,12 +67,12 @@ export const text = (size = 'small') => {
       new_text.fontSize = `min(1.4rem, 0.5rem + 1.4vw)`
       break
     case 'medium':
-      new_text.fontSize = `min(3.6rem, 0.5rem + 3.6vw)`
+      new_text.fontSize = `min(4.0rem, 0.5rem + 4vw)`
       new_text.fontFamily = 'Cormorant, serif'
       new_text.paddingLeft = '16px'
       break
     case 'large':
-      new_text.fontSize = `min(6.0rem, 0.5rem + 6vw)`
+      new_text.fontSize = `min(8.0rem, 0.5rem + 8vw)`
       new_text.fontFamily = 'Cormorant, serif'
       new_text.fontWeight = 'bold'
       break
