@@ -118,7 +118,7 @@ export const DynamicBackground = (props) => {
   let [backgroundStyle, setBackgroundStyle] = React.useState({
     zIndex: 1,
     display: 'flex',
-    background: `linear-gradient(${props.intractable ? '90deg' : '0deg'}, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5))`,
+    background: props.clear ? '' : `linear-gradient(${props.intractable ? '90deg' : '0deg'}, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5))`,
     backgroundSize: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
