@@ -111,8 +111,9 @@ export const DynamicBackground = (props) => {
   let [imageStyle, setImageStyle] = React.useState({
     zIndex: -1,
     position: 'absolute',
-    width: '100%',
-    height: '100%',
+    width: '102%',
+    height: '102%',
+    transform: 'translate(-1%, -1%)',
   })
 
   let [backgroundStyle, setBackgroundStyle] = React.useState({
