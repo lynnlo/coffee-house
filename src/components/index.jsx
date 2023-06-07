@@ -26,8 +26,9 @@ export const Text = (props) => {
 }
 
 export const Container = (props) => {
+  console.log(props)
   return (
-  <div style={{...container(props.size), ...props.style}}>
+  <div style={{...container(props.full ? "full" : props.size), ...props.style}}>
     {props.children}
   </div>
   )
@@ -93,9 +94,8 @@ export const Header = (props) => {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '90vw',
+    width: '100vw',
     height: '100px',
-    padding: '0 50px',
   }
   return (
   <header style={{...container(), ...header_style, ...props.style}}>
@@ -111,9 +111,8 @@ export const DynamicBackground = (props) => {
   let [imageStyle, setImageStyle] = React.useState({
     zIndex: -1,
     position: 'absolute',
-    width: '102%',
-    height: '102%',
-    transform: 'translate(-1%, -1%)',
+    width: '100%',
+    height: '100%',
   })
 
   let [backgroundStyle, setBackgroundStyle] = React.useState({

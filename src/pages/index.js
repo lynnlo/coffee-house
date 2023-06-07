@@ -1,23 +1,14 @@
 import * as React from "react"
 import { container } from "../theme"
 
-import { Title, Subtitle, DynamicBackground, Text } from "../components"
+import { Title, Subtitle, DynamicBackground, Text, Container } from "../components"
 
 import { StaticImage } from "gatsby-plugin-image"
-import { motion, useSpring } from "framer-motion"
+import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax"
 
 const IndexPage = ({ breakpoint }) => {
-  const containerRef = React.useRef(null)
-  const [YScroll, setYScroll] = React.useState(0)
-
-  React.useEffect(() => {
-    setInterval(() => {
-      setYScroll(containerRef.current.scrollTop)
-    }, 10)
-  }, [])
-
   return (
-    <div style={{...container('full'), display: 'block', overflowY: 'scroll'}} ref={containerRef}>
+    <div>
       {breakpoint === 'large' && (
         <div style={container('full')}>
           <DynamicBackground full intractable image={<StaticImage src="../images/coffee-backdrop.jpg" alt="Background of coffee beans" />}>
@@ -30,57 +21,104 @@ const IndexPage = ({ breakpoint }) => {
         </div>
       )}
       {breakpoint === 'large' && (
-      <>
-        <DynamicBackground full clear image={<StaticImage src="../images/journey-start.jpg" alt="A dot with a line going down" />}>
-          <motion.div
-            style={{...container('full'), flexDirection: 'row', translateY: Math.max(YScroll - 1400, 0), backdropFilter: 'none'}}
-          >
-            <div style={{...container('medium'), flexBasis: '50%'}}>
-              <Subtitle style={{textAlign: 'start'}}> Beans </Subtitle>
-              <Text>
-                We source our coffee beans ethically and work with local farmers <br/>
-                to ensure that we are getting the best quality beans.
-              </Text>
+        <>
+        <ParallaxBanner style={{aspectRatio: 16/8}}>
+          <ParallaxBannerLayer speed={30}>
+            <StaticImage src="../images/coffee-fields.jpg"/>
+          </ParallaxBannerLayer>
+          <ParallaxBannerLayer>
+            <div style={{...container('full'), background: 'rgba(0,0,0,0.5)'}} />
+          </ParallaxBannerLayer>
+          <ParallaxBannerLayer>
+            <DynamicBackground full clear image={<StaticImage src="../images/journey-start.png"/>} />
+          </ParallaxBannerLayer>
+          <ParallaxBannerLayer translateY={[-10, 90]}>
+            <div style={{...container('full'), flexDirection: 'row'}}>
+              <StaticImage width={400} src="../images/coffee-beans.png" />
             </div>
-            <div style={{...container('medium'), flexBasis: '50%'}}>
-              <StaticImage width={500} src="../images/coffee-beans.jpg" alt="A picture of coffee beans"></StaticImage>
+          </ParallaxBannerLayer>
+
+          <ParallaxBannerLayer translateY={[50, -35]}>
+            <div style={{...container('full'), flexDirection: 'row'}}>
+              <Container size='medium'>
+                <Subtitle>From Bean</Subtitle>
+              </Container>
+              <Container size='small' />
+              <Container size='small'>
+                <Text>
+                  We work with local farmers to get our beans ethically and sustainably. <br /><br />
+                  Our beans are grown in ideal conditions and are hand picked to ensure the best quality.
+                </Text>
+              </Container>
             </div>
-          </motion.div>
-        </DynamicBackground>
-        <DynamicBackground full clear image={<StaticImage src="../images/journey-middle.jpg" alt="A dot with a line going through it vertically" />}>
-          <motion.div
-            style={{...container('full'), flexDirection: 'row', translateY: Math.max(YScroll - 2750, -1200), backdropFilter: 'none'}}
-          >
-            <div style={{...container('medium'), flexBasis: '50%'}}>
-              <Subtitle style={{textAlign: 'start'}}> Grounds </Subtitle>
-              <Text>
-                We source our coffee beans ethically and work with local farmers <br/>
-                to ensure that we are getting the best quality beans.
-              </Text>
+          </ParallaxBannerLayer>
+        </ParallaxBanner>
+
+        <ParallaxBanner style={{aspectRatio: 16/8}}>
+          <ParallaxBannerLayer speed={30}>
+            <StaticImage src="../images/coffee-grinder.jpg"/>
+          </ParallaxBannerLayer>
+          <ParallaxBannerLayer>
+            <div style={{...container('full'), background: 'rgba(0,0,0,0.5)'}} />
+          </ParallaxBannerLayer>
+          <ParallaxBannerLayer>
+            <DynamicBackground full clear image={<StaticImage src="../images/journey-middle.png"/>} />
+          </ParallaxBannerLayer>
+          <ParallaxBannerLayer translateY={[-10, 90]}>
+            <div style={container('full')}>
+              <StaticImage width={400} src="../images/coffee-grounds.png" />
             </div>
-            <div style={{...container('medium'), flexBasis: '50%'}}>
-              <StaticImage width={500} src="../images/coffee-grounds.jpg" alt="A picture of coffee beans"></StaticImage>
+          </ParallaxBannerLayer>
+
+          <ParallaxBannerLayer translateY={[50, -35]}>
+            <div style={{...container('full'), flexDirection: 'row'}}>
+              <Container size='medium'>
+                <Subtitle>To Ground</Subtitle>
+              </Container>
+              <Container size='small' />
+              <Container size='small'>
+                <Text>
+                  Our beans are roasted in small batches to ensure quality control. <br /><br />
+                  Then, we grind the beans to the perfect consistency for your brewing method.
+                </Text>
+              </Container>
             </div>
-          </motion.div>
-        </DynamicBackground>
-        <DynamicBackground full clear image={<StaticImage src="../images/journey-end.jpg" alt="A dot with a line going up" />}>
-          <motion.div
-            style={{...container('full'), flexDirection: 'row', translateY: Math.max(YScroll - 4100, -1200), backdropFilter: 'none'}}
-          >
-            <div style={{...container('medium'), flexBasis: '50%'}}>
-              <Subtitle style={{textAlign: 'start'}}> Coffee </Subtitle>
-              <Text>
-                We source our coffee beans ethically and work with local farmers <br/>
-                to ensure that we are getting the best quality beans.
-              </Text>
+          </ParallaxBannerLayer>
+        </ParallaxBanner>
+
+        <ParallaxBanner style={{aspectRatio: 16/8}}>
+          <ParallaxBannerLayer speed={-60}>
+            <StaticImage style={{transform: 'translate(0, -1000px)'}} src="../images/coffee-shop.jpg"/>
+          </ParallaxBannerLayer>
+          <ParallaxBannerLayer>
+            <div style={{...container('full'), background: 'rgba(0,0,0,0.5)'}} />
+          </ParallaxBannerLayer>
+          <ParallaxBannerLayer>
+            <DynamicBackground full clear image={<StaticImage src="../images/journey-end.png"/>} />
+          </ParallaxBannerLayer>
+          <ParallaxBannerLayer translateY={[-10, 90]}>
+            <div style={container('full')}>
+              <StaticImage width={600} src="../images/coffee-bag.png" />
             </div>
-            <div style={{...container('medium'), flexBasis: '50%'}}>
-              <StaticImage width={500} src="../images/coffee-bag.jpg" alt="A picture of coffee beans"></StaticImage>
+          </ParallaxBannerLayer>
+
+          <ParallaxBannerLayer translateY={[50, -35]}>
+            <div style={{...container('full'), flexDirection: 'row'}}>
+              <Container size='medium'>
+                <Subtitle>To You</Subtitle>
+              </Container>
+              <Container size='small' />
+              <Container size='small'>
+                <Text>
+                  We take pride in our coffee and want to share it with you. <br /><br />
+                  Order a bag online or visit one of our stores to experience our coffee for yourself.
+                </Text>
+              </Container>
             </div>
-          </motion.div>
-        </DynamicBackground>
-      </>
-      )}
+          </ParallaxBannerLayer>
+        </ParallaxBanner>
+        </>
+        )}
       {breakpoint !== 'large' && (
         <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-backdrop.jpg" alt="Background of coffee beans" />}>
           <Title>Greco Company</Title>

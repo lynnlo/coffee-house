@@ -27,7 +27,7 @@ const getTransitionStyles = {
 
 const Transition = ({ children, location }) => {
   return (
-    <TransitionGroup style={container('full')}> 
+    <TransitionGroup> 
       <ReactTransition
         key={location.pathname}
         timeout={{

@@ -8,8 +8,10 @@ import './index.css'
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { Helmet } from "react-helmet"
+import { ParallaxProvider } from "react-scroll-parallax"
 
 const TemplateWrapper = ({ children, location }) => {
+
   let [breakpoint, setBreakpoint] = React.useState('medium')
   React.useEffect(() => {
     let handleResize = () => {
@@ -31,7 +33,8 @@ const TemplateWrapper = ({ children, location }) => {
       <Helmet htmlAttributes={{lang: 'en'}}>
         <meta name="description" content=" Greco Co. is a family-owned coffee specialty roaster based in Phoenix, Arizona." />
       </Helmet>
-      <div style={container('full')}>
+      <div style={{overflowX: 'hidden'}}>
+      <ParallaxProvider>
         {breakpoint === 'large' && (
           <Header>
             <Link to='/' style={{textDecoration: 'none'}}>
@@ -88,6 +91,7 @@ const TemplateWrapper = ({ children, location }) => {
             return React.cloneElement(child, { breakpoint })
           })}
         </Transition>
+      </ParallaxProvider>
       </div>
     </main>
   )
