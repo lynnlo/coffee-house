@@ -6,7 +6,7 @@ import { Title, Subtitle, DynamicBackground, Text, Container } from "../componen
 import { StaticImage } from "gatsby-plugin-image"
 import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax"
 
-const IndexPage = ({ breakpoint }) => {
+const IndexPage = ({ breakpoint, windowRatio }) => {
   return (
     <div>
       {breakpoint === 'large' && (
@@ -27,7 +27,7 @@ const IndexPage = ({ breakpoint }) => {
         </DynamicBackground>
       )}
       <>
-        <ParallaxBanner style={{aspectRatio: window.innerWidth / window.innerHeight}}>
+        <ParallaxBanner style={{aspectRatio: windowRatio}}>
           <ParallaxBannerLayer speed={30}>
             <DynamicBackground full clear image={<StaticImage src="../images/coffee-fields.jpg" alt="A field of coffee plants" />} />
           </ParallaxBannerLayer>
@@ -59,7 +59,7 @@ const IndexPage = ({ breakpoint }) => {
           </ParallaxBannerLayer>
         </ParallaxBanner>
 
-        <ParallaxBanner style={{aspectRatio: window.innerWidth / window.innerHeight}}>
+        <ParallaxBanner style={{aspectRatio: windowRatio}}>
           <ParallaxBannerLayer speed={30}>
             <DynamicBackground full clear image={<StaticImage src="../images/coffee-grinder.jpg" alt="A coffee grinder" />} />
           </ParallaxBannerLayer>
@@ -91,7 +91,7 @@ const IndexPage = ({ breakpoint }) => {
           </ParallaxBannerLayer>
         </ParallaxBanner>
 
-        <ParallaxBanner style={{aspectRatio: window.innerWidth / window.innerHeight}}>
+        <ParallaxBanner style={{aspectRatio: windowRatio}}>
           <ParallaxBannerLayer speed={-60}>
             <DynamicBackground full clear image={<StaticImage style={{transform: 'translate(0, -1000px)'}} src="../images/coffee-shop.jpg" alt="A coffee shop interior" />} />
           </ParallaxBannerLayer>

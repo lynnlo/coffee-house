@@ -13,6 +13,7 @@ import { ParallaxProvider } from "react-scroll-parallax"
 const TemplateWrapper = ({ children, location }) => {
 
   let [breakpoint, setBreakpoint] = React.useState('medium')
+  let [windowRatio, setWindowRatio] = React.useState(16 / 9)
   React.useEffect(() => {
     let handleResize = () => {
       if (window.innerWidth < 768 || window.innerHeight < 768) {
@@ -22,6 +23,7 @@ const TemplateWrapper = ({ children, location }) => {
       } else {
         setBreakpoint('large')
       }
+      setWindowRatio(window.innerWidth / window.innerHeight)
     }
     handleResize()
     window.addEventListener('resize', handleResize)
@@ -88,7 +90,7 @@ const TemplateWrapper = ({ children, location }) => {
         )}
         <Transition location={location}>
           {React.Children.map(children, child => {
-            return React.cloneElement(child, { breakpoint })
+            return React.cloneElement(child, { breakpoint, windowRatio })
           })}
         </Transition>
       </ParallaxProvider>
