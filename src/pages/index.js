@@ -20,25 +20,30 @@ const IndexPage = ({ breakpoint }) => {
           </DynamicBackground>
         </div>
       )}
-      {breakpoint === 'large' && (
-        <>
-        <ParallaxBanner style={{aspectRatio: 16/8}}>
+      {breakpoint !== 'large' && (
+        <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-backdrop.jpg" alt="Background of coffee beans" />}>
+          <Title>Greco Company</Title>
+          <Subtitle>Specialty Coffee Roasters</Subtitle>
+        </DynamicBackground>
+      )}
+      <>
+        <ParallaxBanner style={{aspectRatio: window.innerWidth / window.innerHeight}}>
           <ParallaxBannerLayer speed={30}>
-            <StaticImage src="../images/coffee-fields.jpg"/>
+            <DynamicBackground full clear image={<StaticImage src="../images/coffee-fields.jpg" alt="A field of coffee plants" />} />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer>
             <div style={{...container('full'), background: 'rgba(0,0,0,0.5)'}} />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer>
-            <DynamicBackground full clear image={<StaticImage src="../images/journey-start.png"/>} />
+            <DynamicBackground full clear image={<StaticImage src="../images/journey-start.png" alt="A circle with a line on the bottom" />} />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer translateY={[-10, 90]}>
             <div style={{...container('full'), flexDirection: 'row'}}>
-              <StaticImage width={400} src="../images/coffee-beans.png" />
+              <StaticImage width={400} src="../images/coffee-beans.png" alt="Coffee beans" />
             </div>
           </ParallaxBannerLayer>
 
-          <ParallaxBannerLayer translateY={[50, -35]}>
+          <ParallaxBannerLayer translateY={[50, -30]}>
             <div style={{...container('full'), flexDirection: 'row'}}>
               <Container size='medium'>
                 <Subtitle>From Bean</Subtitle>
@@ -54,23 +59,23 @@ const IndexPage = ({ breakpoint }) => {
           </ParallaxBannerLayer>
         </ParallaxBanner>
 
-        <ParallaxBanner style={{aspectRatio: 16/8}}>
+        <ParallaxBanner style={{aspectRatio: window.innerWidth / window.innerHeight}}>
           <ParallaxBannerLayer speed={30}>
-            <StaticImage src="../images/coffee-grinder.jpg"/>
+            <DynamicBackground full clear image={<StaticImage src="../images/coffee-grinder.jpg" alt="A coffee grinder" />} />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer>
             <div style={{...container('full'), background: 'rgba(0,0,0,0.5)'}} />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer>
-            <DynamicBackground full clear image={<StaticImage src="../images/journey-middle.png"/>} />
+            <DynamicBackground full clear image={<StaticImage src="../images/journey-middle.png" alt="A line with a circle in the center" />} />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer translateY={[-10, 90]}>
             <div style={container('full')}>
-              <StaticImage width={400} src="../images/coffee-grounds.png" />
+              <StaticImage width={400} src="../images/coffee-grounds.png" alt="Coffee grounds" />
             </div>
           </ParallaxBannerLayer>
 
-          <ParallaxBannerLayer translateY={[50, -35]}>
+          <ParallaxBannerLayer translateY={[50, -30]}>
             <div style={{...container('full'), flexDirection: 'row'}}>
               <Container size='medium'>
                 <Subtitle>To Ground</Subtitle>
@@ -86,23 +91,23 @@ const IndexPage = ({ breakpoint }) => {
           </ParallaxBannerLayer>
         </ParallaxBanner>
 
-        <ParallaxBanner style={{aspectRatio: 16/8}}>
+        <ParallaxBanner style={{aspectRatio: window.innerWidth / window.innerHeight}}>
           <ParallaxBannerLayer speed={-60}>
-            <StaticImage style={{transform: 'translate(0, -1000px)'}} src="../images/coffee-shop.jpg"/>
+            <DynamicBackground full clear image={<StaticImage style={{transform: 'translate(0, -1000px)'}} src="../images/coffee-shop.jpg" alt="A coffee shop interior" />} />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer>
             <div style={{...container('full'), background: 'rgba(0,0,0,0.5)'}} />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer>
-            <DynamicBackground full clear image={<StaticImage src="../images/journey-end.png"/>} />
+            <DynamicBackground full clear image={<StaticImage src="../images/journey-end.png" alt="A circle with a line on the top" />} />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer translateY={[-10, 90]}>
             <div style={container('full')}>
-              <StaticImage width={600} src="../images/coffee-bag.png" />
+              <StaticImage width={600} src="../images/coffee-bag.png" alt="A coffee bag" />
             </div>
           </ParallaxBannerLayer>
 
-          <ParallaxBannerLayer translateY={[50, -35]}>
+          <ParallaxBannerLayer translateY={[50, -30]}>
             <div style={{...container('full'), flexDirection: 'row'}}>
               <Container size='medium'>
                 <Subtitle>To You</Subtitle>
@@ -117,14 +122,7 @@ const IndexPage = ({ breakpoint }) => {
             </div>
           </ParallaxBannerLayer>
         </ParallaxBanner>
-        </>
-        )}
-      {breakpoint !== 'large' && (
-        <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-backdrop.jpg" alt="Background of coffee beans" />}>
-          <Title>Greco Company</Title>
-          <Subtitle>Specialty Coffee Roasters</Subtitle>
-        </DynamicBackground>
-      )}
+      </>
     </div>
   )
 }
