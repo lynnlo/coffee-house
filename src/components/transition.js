@@ -4,8 +4,6 @@ import {
   Transition as ReactTransition,
 } from "react-transition-group"
 
-import { container } from "../theme"
-
 const timeout = 250
 const getTransitionStyles = {
   entering: {

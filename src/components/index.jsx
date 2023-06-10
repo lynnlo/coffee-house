@@ -26,7 +26,6 @@ export const Text = (props) => {
 }
 
 export const Container = (props) => {
-  console.log(props)
   return (
   <div style={{...container(props.full ? "full" : props.size), ...props.style}}>
     {props.children}
@@ -101,6 +100,24 @@ export const Header = (props) => {
   <header style={{...container(), ...header_style, ...props.style}}>
     {props.children}
   </header>
+  )
+}
+
+export const Footer = (props) => {
+  const footer_style = {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100vw',
+    height: '100px',
+    position: 'absolute',
+    bottom: 0,
+  }
+  return (
+  <footer style={{...container(), ...footer_style, ...props.style}}>
+    {props.children}
+  </footer>
   )
 }
 

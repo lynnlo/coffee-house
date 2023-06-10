@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { container } from '../theme';
+import * as React from 'react'
+import { container } from '../theme'
 
-import { Title, Text, DynamicBackground } from '../components';
+import { Title, Text, DynamicBackground } from '../components'
 
 import { StaticImage } from "gatsby-plugin-image"
 

@@ -1,7 +1,7 @@
 import * as React from "react"
 import theme, { container } from "../theme"
 
-import { Button, Header } from "../components"
+import { Button, Footer, Header, Text } from "../components"
 import Transition from "../components/transition"
 
 import './index.css'
@@ -11,7 +11,6 @@ import { Helmet } from "react-helmet"
 import { ParallaxProvider } from "react-scroll-parallax"
 
 const TemplateWrapper = ({ children, location }) => {
-
   let [breakpoint, setBreakpoint] = React.useState('medium')
   let [windowRatio, setWindowRatio] = React.useState(16 / 9)
   React.useEffect(() => {
@@ -88,11 +87,20 @@ const TemplateWrapper = ({ children, location }) => {
             </div>
           </Header>
         )}
+        
         <Transition location={location}>
           {React.Children.map(children, child => {
             return React.cloneElement(child, { breakpoint, windowRatio })
           })}
         </Transition>
+
+        <Footer>
+          <div style={{...container('medium'), flexDirection: 'row', paddingTop: '1em', gap: '1em'}}>
+            <Link to='/' style={{textDecoration: 'none'}}>
+              <Text> © 2023 Greco Company. All rights reserved.  </Text>
+            </Link>
+          </div>
+        </Footer>
       </ParallaxProvider>
       </div>
     </main>

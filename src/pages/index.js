@@ -46,7 +46,7 @@ const IndexPage = ({ breakpoint, windowRatio }) => {
           <ParallaxBannerLayer translateY={[50, -30]}>
             <div style={{...container('full'), flexDirection: 'row'}}>
               <Container size='medium'>
-                <Subtitle>From Bean</Subtitle>
+                <Title>From Beans</Title>
               </Container>
               <Container size='small' />
               <Container size='small'>
@@ -78,13 +78,13 @@ const IndexPage = ({ breakpoint, windowRatio }) => {
           <ParallaxBannerLayer translateY={[50, -30]}>
             <div style={{...container('full'), flexDirection: 'row'}}>
               <Container size='medium'>
-                <Subtitle>To Ground</Subtitle>
+                <Title>To Grounds</Title>
               </Container>
               <Container size='small' />
               <Container size='small'>
                 <Text>
                   Our beans are roasted in small batches to ensure quality control. <br /><br />
-                  Then, we grind the beans to the perfect consistency for your brewing method.
+                  Then, we grind the beans to the perfect consistency.
                 </Text>
               </Container>
             </div>
@@ -103,14 +103,14 @@ const IndexPage = ({ breakpoint, windowRatio }) => {
           </ParallaxBannerLayer>
           <ParallaxBannerLayer translateY={[-10, 90]}>
             <div style={container('full')}>
-              <StaticImage width={600} src="../images/coffee-bag.png" alt="A coffee bag" />
+              <StaticImage width={800} src="../images/coffee-bag.png" alt="A coffee bag" />
             </div>
           </ParallaxBannerLayer>
 
           <ParallaxBannerLayer translateY={[50, -30]}>
             <div style={{...container('full'), flexDirection: 'row'}}>
               <Container size='medium'>
-                <Subtitle>To You</Subtitle>
+                <Title>To You</Title>
               </Container>
               <Container size='small' />
               <Container size='small'>

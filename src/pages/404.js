@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { container } from '../theme';
+import * as React from 'react'
+import { container } from '../theme'
 
-import { Title, Text } from '../components';
+import { Title, Text } from '../components'
 
 const NotFound = () => {
 	return (
