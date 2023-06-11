@@ -95,6 +95,9 @@ export const Header = (props) => {
     alignItems: 'center',
     width: '100vw',
     height: '100px',
+    position: 'absolute',
+    top: 0,
+    zIndex: 2,
   }
   return (
   <header style={{...container(), ...header_style, ...props.style}}>
@@ -113,6 +116,7 @@ export const Footer = (props) => {
     height: '100px',
     position: 'absolute',
     bottom: 0,
+    zIndex: 2,
   }
   return (
   <footer style={{...container(), ...footer_style, ...props.style}}>
@@ -129,7 +133,7 @@ export const DynamicBackground = (props) => {
     zIndex: -1,
     position: 'absolute',
     width: '100%',
-    height: '100%',
+    height: '100vh',
   })
 
   let [backgroundStyle, setBackgroundStyle] = React.useState({

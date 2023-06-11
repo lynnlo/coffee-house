@@ -75,4 +75,5 @@ const About = ({ breakpoint }) => {
 }
 
 export default About
-export const Head = () => <title>Greco Company Roasters</title>
+
+export { Head } from '../layouts/index'

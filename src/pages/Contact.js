@@ -54,20 +54,13 @@ const About = ({ breakpoint }) => {
       
       {breakpoint === 'medium' && (
         <div style={container('full')}>
-        <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-front.jpg" alt="Outdoor entrance of a cafe" />}>
+            <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-front.jpg" alt="Outdoor entrance of a cafe" />}>
             <Title>Contact Us</Title>
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'start', gap: '1em'}}>
               <Text>
-                123 Main Street, Phoenix, AZ 85012<br />
+                4944 W Northern Ave, Glendale, AZ 85301<br />
                 Phone: (602) 555-1212<br />
                 Email: <Anchor href='mailto:info@greco.coffee'>info@greco.coffee</Anchor><br />
-                Website: <Anchor href='http://www.greco.coffee'>www.greco.coffee</Anchor>
-              </Text>
-              <Text>
-                Business hours:<br />
-                Monday - Friday: 7:00am - 6:00pm<br />
-                Saturday: 8:00am - 4:00pm<br />
-                Sunday: Closed
               </Text>
               <Text>
                 Social media:<br />
@@ -116,4 +109,5 @@ const About = ({ breakpoint }) => {
 }
 
 export default About
-export const Head = () => <title>Greco Company Roasters</title>
+
+export { Head } from '../layouts/index'
