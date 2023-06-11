@@ -23,7 +23,7 @@ export const container = (size = 'small') => {
     alignItems: 'center',
 
     overflow: 'hidden',
-    backdropFilter: 'drop-shadow(4px 4px 4px #000000)',
+    backdropFilter: 'drop-shadow(4px 4px 4px #00000033)',
   }
 
   switch (size) {
@@ -59,7 +59,7 @@ export const text = (size = 'small') => {
 
     margin: '8px',
 
-    filter: 'drop-shadow(4px 4px 4px #000000)',
+    filter: 'drop-shadow(4px 4px 4px #00000033)',
   }
 
   switch (size) {
@@ -96,7 +96,7 @@ export const button = (type = 'default', hover = false, color = 'primary') => {
     border: 'none',
 
     cursor: 'pointer',
-    filter: 'drop-shadow(4px 4px 4px #000000)',
+    filter: 'drop-shadow(4px 4px 4px #00000033)',
     transition : 'filter 0.2s ease-in-out',
   }
 
@@ -162,7 +162,7 @@ export const input = (type = 'default', hover = false, color = 'primary') => {
     border: 'none',
 
     cursor: 'pointer',
-    filter: 'drop-shadow(4px 4px 4px #000000)',
+    filter: 'drop-shadow(4px 4px 4px #00000033)',
     transition : 'filter 0.2s ease-in-out',
   }
 
@@ -215,7 +215,7 @@ export const anchor = (type = 'default', hover = false, color = 'primary') => {
     color: color_primary,
     textDecoration: 'none',
     cursor: 'pointer',
-    filter: 'drop-shadow(4px 4px 4px #000000)',
+    filter: 'drop-shadow(4px 4px 4px #00000033)',
     transition : 'filter 0.2s ease-in-out',
   }
 

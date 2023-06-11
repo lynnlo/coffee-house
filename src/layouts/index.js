@@ -41,8 +41,8 @@ const TemplateWrapper = ({ children, location }) => {
               <Link to='/' style={{textDecoration: 'none'}}>
                 <Button type='plain' tabIndex="-1">Home<hr /></Button>
               </Link>
-              <Link to='/About' style={{textDecoration: 'none'}}>
-                <Button type='plain' tabIndex="-1">About<hr /></Button>
+              <Link to='/Shop' style={{textDecoration: 'none'}}>
+                <Button type='plain' tabIndex="-1">Shop<hr /></Button>
               </Link>
               <Link to='/Contact' style={{textDecoration: 'none'}}>
                 <Button type='plain' tabIndex="-1">Contact<hr /></Button>
@@ -59,8 +59,8 @@ const TemplateWrapper = ({ children, location }) => {
               <Link to='/' style={{textDecoration: 'none'}}>
                 <Button type='plain' tabIndex="-1">Home<hr /></Button>
               </Link>
-              <Link to='/About' style={{textDecoration: 'none'}}>
-                <Button type='plain' tabIndex="-1">About<hr /></Button>
+              <Link to='/Shop' style={{textDecoration: 'none'}}>
+                <Button type='plain' tabIndex="-1">Shop<hr /></Button>
               </Link>
               <Link to='/Contact' style={{textDecoration: 'none'}}>
                 <Button type='plain' tabIndex="-1">Contact<hr /></Button>
@@ -74,8 +74,8 @@ const TemplateWrapper = ({ children, location }) => {
               <Link to='/' style={{textDecoration: 'none'}}>
                 <Button type='plain' tabIndex="-1">Home<hr /></Button>
               </Link>
-              <Link to='/About' style={{textDecoration: 'none'}}>
-                <Button type='plain' tabIndex="-1">About<hr /></Button>
+              <Link to='/Shop' style={{textDecoration: 'none'}}>
+                <Button type='plain' tabIndex="-1">Shop<hr /></Button>
               </Link>
               <Link to='/Contact' style={{textDecoration: 'none'}}>
                 <Button type='plain' tabIndex="-1">Contact<hr /></Button>
@@ -108,6 +108,7 @@ export default TemplateWrapper
 export function Head() {
   return (
     <>
+      <html lang="en" />
       <title>Greco Company Roasters</title>
       <meta name="title" content="Greco Coffee Company" />
       <meta name="description" content="Greco Co. is a family-owned coffee specialty roaster based in Phoenix, Arizona." />

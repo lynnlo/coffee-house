@@ -1,5 +1,7 @@
 import * as React from "react"
 import { container, text, button, anchor, input } from "../theme"
+import { StaticImage } from "gatsby-plugin-image"
+import Tilt from 'react-parallax-tilt'
 
 export const Title = (props) => {
   return (
@@ -89,10 +91,8 @@ export const Anchor = (props) => {
 
 export const Header = (props) => {
   const header_style = {
-    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
     width: '100vw',
     height: '100px',
     position: 'absolute',
@@ -108,10 +108,8 @@ export const Header = (props) => {
 
 export const Footer = (props) => {
   const footer_style = {
-    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
     width: '100vw',
     height: '100px',
     position: 'absolute',
@@ -122,6 +120,53 @@ export const Footer = (props) => {
   <footer style={{...container(), ...footer_style, ...props.style}}>
     {props.children}
   </footer>
+  )
+}
+
+export const ShopItem = (props) => {
+  const [hover, setHover] = React.useState(false)
+
+  const item_style = {
+    background: '#222',
+    width: '500px',
+    height: '500px',
+    flexShrink: 0,
+  }
+
+  const text_style = {
+    background: '#111A',
+    opacity: hover ? 1 : 0,
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    transition: 'opacity 0.5s ease',
+  }
+
+  return (
+  <Tilt
+    tiltReverse
+  >
+    <div
+      style={{...container(), ...item_style, ...props.style}}
+      role="button"
+      tabIndex={0}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      onFocus={() => setHover(true)}
+      onBlur={() => setHover(false)}
+    >
+      <StaticImage
+        style={{width: '100%', height: '100%'}}
+        src='../images/coffee-bag.png'
+        alt='A coffee bag'
+      />
+      <div style={{...container(), ...text_style}}>
+        <Subtitle> {props.name} </Subtitle>
+        <Text> {props.description} </Text>
+        <Text> ${props.price} </Text>
+      </div>
+    </div>
+  </Tilt>
   )
 }
 
