@@ -110,12 +110,9 @@ export function Head() {
     <>
       <html lang="en"  />
       <title>Greco Company Roasters</title>
-      <meta name="referrer" content="strict-origin-when-cross-origin" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="keywords" content="coffee, roasters, specialty, phoenix, arizona, family-owned" />
       <meta name="author" content="Greco Company" />
       <meta name="title" content="Greco Coffee Company" />
-      <meta name="robots" content="index, follow" />
       <meta name="description" content="Greco Co. is a family-owned coffee specialty roaster based in Phoenix, Arizona." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://metatags.io/" />

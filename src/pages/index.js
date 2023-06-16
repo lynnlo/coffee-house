@@ -29,7 +29,7 @@ const IndexPage = ({ breakpoint, windowRatio }) => {
       <>
         <ParallaxBanner style={{aspectRatio: windowRatio}}>
           <ParallaxBannerLayer speed={30}>
-            <StaticImage style={{height: '100%'}} src="../images/coffee-fields.jpg" alt="A field of coffee plants" />
+            <StaticImage style={{height: '100%', width: '100%'}} src="../images/coffee-fields.jpg" alt="A field of coffee plants" />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer>
             <div style={{...container('full'), background: 'rgba(0,0,0,0.5)'}} />
@@ -61,7 +61,7 @@ const IndexPage = ({ breakpoint, windowRatio }) => {
 
         <ParallaxBanner style={{aspectRatio: windowRatio}}>
           <ParallaxBannerLayer speed={30}>
-            <StaticImage style={{height: '100%'}} src="../images/coffee-grinder.jpg" alt="A coffee grinder" />
+            <StaticImage style={{height: '100%', width: '100%'}} src="../images/coffee-grinder.jpg" alt="A coffee grinder" />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer>
             <div style={{...container('full'), background: 'rgba(0,0,0,0.5)'}} />
@@ -93,7 +93,7 @@ const IndexPage = ({ breakpoint, windowRatio }) => {
 
         <ParallaxBanner style={{aspectRatio: windowRatio}}>
           <ParallaxBannerLayer speed={-60}>
-            <StaticImage style={{height: '100%', transform: 'translate(0, -300px)'}} src="../images/coffee-shop.jpg" alt="A coffee shop interior" />
+            <StaticImage style={{height: '100%', width: '100%', transform: 'translate(0, -300px)'}} src="../images/coffee-shop.jpg" alt="A coffee shop interior" />
           </ParallaxBannerLayer>
           <ParallaxBannerLayer>
             <div style={{...container('full'), background: 'rgba(0,0,0,0.5)'}} />

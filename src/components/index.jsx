@@ -128,8 +128,8 @@ export const ShopItem = (props) => {
 
   const item_style = {
     background: '#222',
-    width: '500px',
-    height: '500px',
+    width: props.large ? '500px' : '300px',
+    height: props.large ? '500px' : '300px',
     flexShrink: 0,
   }
 
@@ -145,6 +145,7 @@ export const ShopItem = (props) => {
   return (
   <Tilt
     tiltReverse
+    tiltEnable={props.intractable === true}
   >
     <div
       style={{...container(), ...item_style, ...props.style}}
