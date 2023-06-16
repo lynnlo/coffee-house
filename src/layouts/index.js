@@ -110,6 +110,7 @@ export function Head() {
     <>
       <html lang="en"  />
       <title>Greco Company Roasters</title>
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
       <meta name="keywords" content="coffee, roasters, specialty, phoenix, arizona, family-owned" />
       <meta name="author" content="Greco Company" />
       <meta name="title" content="Greco Coffee Company" />
