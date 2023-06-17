@@ -156,14 +156,22 @@ export const ShopItem = (props) => {
       onFocus={() => setHover(true)}
       onBlur={() => setHover(false)}
     >
-      <StaticImage
-        style={{width: '100%', height: '100%'}}
-        src='../images/coffee-bag.png'
-        alt='A coffee bag'
-      />
+      {props.premium ?
+        <StaticImage
+          style={{width: '100%', height: '100%'}}
+          src='../images/coffee-bag-dark.png'
+          alt='A coffee bag'
+        />
+      :
+        <StaticImage
+          style={{width: '100%', height: '100%'}}
+          src='../images/coffee-bag-normal.png'
+          alt='A coffee bag'
+        />
+      }
       <div style={{...container(), ...text_style}}>
         <Subtitle> {props.name} </Subtitle>
-        <Text> {props.description} </Text>
+        <Text style={{width: '75%'}}> {props.description} </Text>
         <Text> ${props.price} </Text>
       </div>
     </div>
