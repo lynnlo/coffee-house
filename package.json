@@ -20,6 +20,7 @@
     "gatsby-plugin-image": "^3.3.2",
     "gatsby-plugin-layout": "^4.3.0",
     "gatsby-plugin-manifest": "^5.3.1",
+    "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.3.2",
     "gatsby-source-filesystem": "^5.3.1",
     "gatsby-transformer-sharp": "^5.3.1",

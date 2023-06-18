@@ -27,5 +27,12 @@ module.exports = {
       "icon": "./src/images/gatsby-icon.png"
     }
   },
+  {
+    resolve: 'gatsby-plugin-robots-txt',
+    options: {
+      host: 'https://coffeehousemaster.gatsbyjs.io/',
+      policy: [{ userAgent: '*', allow: '/' }]
+    }
+  },
 ]
 };

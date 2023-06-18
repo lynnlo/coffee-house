@@ -91,10 +91,8 @@ const TemplateWrapper = ({ children, location }) => {
         </Transition>
 
         <Footer>
-          <div style={{...container('medium'), flexDirection: 'row', paddingTop: '1em', gap: '1em'}}>
-            <Link to='/' style={{textDecoration: 'none'}}>
-              <Text> © 2023 Greco Company. All rights reserved.  </Text>
-            </Link>
+          <div style={{...container('medium'), flexDirection: 'column'}}>
+            <Text> © 2023 Greco Company. All rights reserved. </Text>
           </div>
         </Footer>
       </ParallaxProvider>

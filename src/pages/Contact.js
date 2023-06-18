@@ -31,14 +31,14 @@ const About = ({ breakpoint }) => {
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'start', gap: '1em'}}>
               <Text>
                 4944 W Northern Ave, Glendale, AZ 85301<br />
-                Phone: (555) 780-9292 <br />
-                Email: <Anchor href='mailto:info@greco.coffee'>info@greco.coffee</Anchor><br />
+                Phone: (602) 555-1212<br />
+                Email: <Anchor href='mailto:info@grecoroasting.com'>info@grecoroasting.com</Anchor><br />
               </Text>
               <Text>
                 Social media:<br />
                 Facebook: <Anchor href='http://www.facebook.com/grecocoffee'>@grecocoffee</Anchor><br />
-                Instagram: <Anchor href='http://www.instagram.com/grecocoffee'>@grecocoffee</Anchor><br />
-                Twitter: <Anchor href='http://www.twitter.com/grecocoffee'>@grecocoffee</Anchor>
+                Instagram: <Anchor href='http://www.instagram.com/grecocoffee_az'>@grecocoffee_az</Anchor><br />
+                Twitter: <Anchor href='http://www.twitter.com/grecocoffee_az'>@grecocoffee_az</Anchor><br />
               </Text>
               <div>
                 <Text> Sign up for our newsletter:</Text>
@@ -46,6 +46,9 @@ const About = ({ breakpoint }) => {
                   <Input style={{basis: '60%', padding: '12px 12px'}} type='square' />
                   <Button style={{basis: '40%', padding: '12px 12px'}} type='square'>Subscribe</Button>
                 </form>
+                <Text>
+                  This is a mock website created for FBLA. 
+                </Text>
               </div>
             </div>
           </div>
@@ -56,17 +59,17 @@ const About = ({ breakpoint }) => {
         <div style={container('full')}>
             <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-front.jpg" alt="Outdoor entrance of a cafe" />}>
             <Title>Contact Us</Title>
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'start', gap: '1em'}}>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'start', gap: '0.5em'}}>
               <Text>
                 4944 W Northern Ave, Glendale, AZ 85301<br />
                 Phone: (602) 555-1212<br />
-                Email: <Anchor href='mailto:info@greco.coffee'>info@greco.coffee</Anchor><br />
+                Email: <Anchor href='mailto:info@grecoroasting.com'>info@grecoroasting.com</Anchor><br />
               </Text>
               <Text>
                 Social media:<br />
                 Facebook: <Anchor href='http://www.facebook.com/grecocoffee'>@grecocoffee</Anchor><br />
-                Instagram: <Anchor href='http://www.instagram.com/grecocoffee'>@grecocoffee</Anchor><br />
-                Twitter: <Anchor href='http://www.twitter.com/grecocoffee'>@grecocoffee</Anchor>
+                Instagram: <Anchor href='http://www.instagram.com/grecocoffee_az'>@grecocoffee_az</Anchor><br />
+                Twitter: <Anchor href='http://www.twitter.com/grecocoffee_az'>@grecocoffee_az</Anchor><br />
               </Text>
             </div>
             <form style={{display: 'flex', flexDirection: 'column'}}>
@@ -74,6 +77,9 @@ const About = ({ breakpoint }) => {
               <Input style={{basis: '60%', padding: '12px 12px'}} type='square' />
               <Button style={{basis: '40%', padding: '12px 12px'}} type='square'>Subscribe</Button>
             </form>
+            <Text>
+              This is a mock website created for FBLA. 
+            </Text>
           </DynamicBackground>
         </div>
       )}
@@ -82,18 +88,18 @@ const About = ({ breakpoint }) => {
         <div style={container('full')}>
           <DynamicBackground full style={{flexDirection: 'column'}} image={<StaticImage src="../images/coffee-front.jpg" alt="Outdoor entrance of a cafe" />}>
             <Title>Contact Us</Title>
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'start', gap: '1em'}}>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'start', gap: '0.5em'}}>
               <Text>
-                123 Main Street, Phoenix, AZ 85012<br />
+                4944 W Northern Ave, Glendale, AZ 85301<br />
                 Phone: (602) 555-1212<br />
-                Email: <Anchor href='mailto:info@greco.coffee'>info@greco.coffee</Anchor><br />
-                Website: <Anchor href='http://www.greco.coffee'>www.greco.coffee</Anchor>
+                Email: <Anchor href='mailto:info@grecoroasting.com'>info@grecoroasting.com</Anchor><br />
               </Text>
               <Text>
                 Social media:<br />
                 Facebook: <Anchor href='http://www.facebook.com/grecocoffee'>@grecocoffee</Anchor><br />
-                Instagram: <Anchor href='http://www.instagram.com/grecocoffee'>@grecocoffee</Anchor><br />
-                Twitter: <Anchor href='http://www.twitter.com/grecocoffee'>@grecocoffee</Anchor>
+                Instagram: <Anchor href='http://www.instagram.com/grecocoffee_az'>@grecocoffee_az</Anchor><br />
+                Twitter: <Anchor href='http://www.twitter.com/grecocoffee_az'>@grecocoffee_az</Anchor><br />
+                This is a mock website created for FBLA. 
               </Text>
             </div>
             <form style={{display: 'flex', flexDirection: 'column'}}>
@@ -101,6 +107,9 @@ const About = ({ breakpoint }) => {
               <Input style={{basis: '60%', padding: '12px 12px'}} type='square' />
               <Button style={{basis: '40%', padding: '12px 12px'}} type='square'>Subscribe</Button>
             </form>
+            <Text>
+              This is a mock website created for FBLA. 
+            </Text>
           </DynamicBackground>
         </div>
       )}
